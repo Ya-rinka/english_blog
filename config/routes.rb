@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+ root 'teachers#index'
+
+ get 'about' => 'stat_pages#about'
+ resources :teachers
 end

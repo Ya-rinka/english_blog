@@ -1,0 +1,16 @@
+<h3>Add article about teacher</h3>
+<%= form_for :teacher, url: teachers_path do |f| %>
+
+    <p>
+        Name<br>
+        <%= f.text_field :name%>
+    </p>
+    <p>
+        Description<br>
+        <%= f.text_area :description%>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>
