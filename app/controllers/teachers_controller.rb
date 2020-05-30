@@ -1,9 +1,11 @@
 class TeachersController < ApplicationController
 
     def index
+        @teacher = Teacher.all
     end
 
     def new
+        @teacher = Teacher.new
     end
 
     def show
@@ -13,8 +15,11 @@ class TeachersController < ApplicationController
     def create
        # render plain: params[:teacher].inspect
        @teacher = Teacher.new(teacher_params)
-       @teacher.save
-       redirect_to @teacher
+       if(@teacher.save)
+        redirect_to @teacher
+       else
+        render 'new'
+       end
     end
 
     private def teacher_params

@@ -5,11 +5,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'  %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="container blog-header py-3">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col-4 pt-1">
+          <span class="text-muted"><%= link_to "Home page", home_path %></span>
+          <span class="text-muted"><%= link_to "About", about_path %></span>
+        </div>
+        <div class="col-4 text-center">
+          <h5 class="blog-header-logo text-dark">TeacherED</h5>
+        </div>
+        <div class="col-4 d-flex justify-content-end align-items-center">
+          <span class="text-muted"><%= link_to "Add article", new_teacher_path %></span>
+          <span class="btn btn-sm btn-outline-secondary"><%= link_to "Sign up", new_teacher_path %></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
