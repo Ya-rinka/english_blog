@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WELCOME TO 'ENGLISH TEACHERS BLOG'!!
 
-Things you may want to cover:
+Don't forget to register, because registered users can:
 
-* Ruby version
+* See articles
 
-* System dependencies
+* Add articles
 
-* Configuration
+* Edit articles
 
-* Database creation
+* Delete articles
 
-* Database initialization
+* Add comments
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Unregistered users can:
 
-* Deployment instructions
+* See articles
 
-* ...
+* Add comments
+
+
+To add a comment, press More->Add a comment
+To edit or delete articles, press More->Edit/Delete Buttons will be shown only if you are registered.
+To add an article, press 'Add article' on the header. Button will be shown only if you are registered.
