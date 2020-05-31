@@ -1,6 +1,9 @@
 # README
 
 WELCOME TO 'ENGLISH TEACHERS BLOG'!!
+Here you can see different responses about teachers of english all over the world!
+If you know the teacher, you can write your comment!
+If you look for a teacher - here the website is!
 
 Don't forget to register, because registered users can:
 
