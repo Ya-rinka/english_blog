@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+
+   # http_basic_authenticate_with name: "admin", password: "123"
+
     def create
         @teacher = Teacher.find(params[:teacher_id])
         @comment = @teacher.comments.create(comment_params)
