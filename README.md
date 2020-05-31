@@ -1,5 +1,8 @@
 # README
 
+!!!!!!!You can log in: email: hello@gmail.com, password: hello123
+Or you can register, as you wish))
+
 WELCOME TO 'ENGLISH TEACHERS BLOG'!!
 Here you can see different responses about teachers of english all over the world!
 If you know the teacher, you can write your comment!
