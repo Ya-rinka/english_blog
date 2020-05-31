@@ -1,9 +1,2 @@
-<h2>Available teachers</h2>
-
-<% @teacher.each do |teacher| %>
-    <div class="container alert">
-        <h3><%= teacher.name %></h3>
-        <p><%= teacher.description %></p>
-        <%= link_to "More", teacher_path(teacher), :class => "btn btn-default" %>
-    </div>
-<% end %>
+<h2>All Teachers</h2>
+<%= render @teacher %>

@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
 
    before_action :authenticate_user!, except: [:index, :show]
+   before_action :set_teacher, only: [:show, :edit, :update, :destroy]
 
     def index
         @teacher = Teacher.all
@@ -11,15 +12,12 @@ class TeachersController < ApplicationController
     end
 
     def show
-        @teacher = Teacher.find(params[:id])
     end
 
     def edit
-        @teacher = Teacher.find(params[:id])
     end
 
     def update
-        @teacher = Teacher.find(params[:id])
         if(@teacher.update(teacher_params))
             redirect_to @teacher
         else
@@ -27,14 +25,7 @@ class TeachersController < ApplicationController
         end
     end
 
-    def destroy
-        @teacher = Teacher.find(params[:id])
-        @teacher.destroy
-        redirect_to 'teachers_path'
-    end
-
     def create
-       # render plain: params[:teacher].inspect
         @teacher = Teacher.new(teacher_params)
         if(@teacher.save)
             redirect_to @teacher
@@ -43,9 +34,20 @@ class TeachersController < ApplicationController
         end
     end
 
-    private def teacher_params
-        params.require(:teacher).permit(:name, :description)
+    def destroy
+        @teacher.destroy
+        redirect_to teachers_path
     end
+
+    private 
+
+        def set_teacher
+            @teacher = Teacher.find(params[:id])
+        end
+        
+        def teacher_params
+            params.require(:teacher).permit(:name, :description)
+        end
  
 
 end
