@@ -1,2 +1,31 @@
 <h3><%= @teacher.name %></h3>
 <p><%= @teacher.description %></p>
+
+<%= link_to "Edit", edit_teacher_path(@teacher), :class => 'btn btn-default' %>
+<%= link_to "Delete", teacher_path(@teacher), method: :delete, data:{confirm: "Do you really want to delete the article?"}, :class => 'btn btn-default' %>
+
+<hr>
+<h2>All comments</h2>
+
+<% @teacher.comments.each do |comment| %>
+    <div class="container alert">
+        <p><strong><%= comment.user %></strong>: <%= comment.comment %></p>
+    </div>
+<% end %>
+<hr>
+
+<h3>Add comments</h3>
+<%= form_for([@teacher, @teacher.comments.build]) do |f| %>
+    <p>
+        Userame<br>
+        <%= f.text_field(:user, {:class => 'form-control'})%>
+    </p>
+    <p>
+        Comment<br>
+        <%= f.text_area(:comment, {:class => 'form-control'})%>
+    </p>
+    <p>
+        <%= f.submit("Add", {:class => 'btn btn-success'})%>
+    </p>
+
+<% end %>

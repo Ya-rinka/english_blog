@@ -1,5 +1,5 @@
-<h3>Add article about teacher</h3>
-<%= form_for :teacher, url: teachers_path do |f| %>
+<h3>Edit article about teacher</h3>
+<%= form_for :teacher, url: teacher_path(@teacher), method: :patch do |f| %> 
 
     <% if @teacher.errors.any? %> # if there're any errors, i need to check which ones
         <% @teacher.errors.full_messages.each do |message| %>
