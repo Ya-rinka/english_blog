@@ -5,16 +5,23 @@
         <% end %>
     <% end %>
 
-    <p>
-        Name<br>
-        <%= f.text_field(:name, {:class => 'form-control'})%>
-    </p>
-    <p>
-        Description<br>
-        <%= f.text_area(:description, {:class => 'form-control'})%>
-    </p>
-    <p>
-        <%= f.submit({:class => 'btn btn-success'})%>
-    </p>
+    <div class="col-md-11">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static bg-light">
+                <h5>
+                    Name
+                    <%= f.text_field(:name, {class: 'form-control'})%>
+                </h5>
+                <h5>
+                    Description
+                <%= f.text_area(:description, {class: 'form-control'})%>
+                </h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <%= f.submit({class: 'btn bg-secondary text-white'})%>
+    </div>
 
 <% end %>

@@ -1,3 +1,10 @@
-<h3><%= teacher.name %></h3>
-<p><%= teacher.description %></p>
-<%= link_to "More", teacher_path(teacher), :class => "btn btn-default" %>
+
+    <div class="col-md-11">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static bg-light">
+                <h3 class="mb-0"><%= teacher.name %></h3>
+                <p><%= teacher.description %></p>
+                <%= link_to "More", teacher_path(teacher), class: "btn-link text-dark font-italic font-weight-bold" %>
+            </div>
+        </div>
+    </div>

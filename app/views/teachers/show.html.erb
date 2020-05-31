@@ -1,34 +1,47 @@
-<h3><%= @teacher.name %></h3>
-<p><%= @teacher.description %></p>
+<div class="container">
+    <br /><br /><br /><br />
+    <h2 class="pb-4 mb-4 font-italic border-bottom">Teacher</h2>
+</div>
+<div class="col-md-11">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static bg-light">
+            <h3><%= @teacher.name %></h3>
+            <p><%= @teacher.description %></p>
+        </div>
+    </div>
+</div>
+
 
 <% if user_signed_in? %>
-
-    <%= link_to "Edit", edit_teacher_path(@teacher), class: 'btn btn-default' %>
-    <%= link_to "Delete", teacher_path(@teacher), method: :delete, data: { confirm: "Do you really want to delete the article?" }, class: 'btn btn-default' %>
-<% end %>
-
-<hr>
-<h2>All comments</h2>
-
-<% @teacher.comments.each do |comment| %>
-    <div class="container alert">
-        <p><strong><%= comment.user %></strong>: <%= comment.comment %></p>
+    <div class="container">
+        <%= link_to "Edit", edit_teacher_path(@teacher), class: 'btn bg-secondary text-white' %>
+        <%= link_to "Delete", teacher_path(@teacher), method: :delete, data: { confirm: "Do you really want to delete the article?" }, class: 'btn bg-secondary text-white' %>
     </div>
 <% end %>
-<hr>
 
-<h3>Add comments</h3>
-<%= form_for([@teacher, @teacher.comments.build]) do |f| %>
-    <p>
-        Userame<br>
-        <%= f.text_field(:user, {:class => 'form-control'})%>
-    </p>
-    <p>
-        Comment<br>
-        <%= f.text_area(:comment, {:class => 'form-control'})%>
-    </p>
-    <p>
-        <%= f.submit("Add", {:class => 'btn btn-success'})%>
-    </p>
+<div class="container">
+    <h3 class="text-light">..</h3>
+    <h3 class="pb-4 mb-4 font-italic border-bottom">Comments</h3>
 
-<% end %>
+    <% @teacher.comments.each do |comment| %>
+
+            <p><strong><%= comment.user %></strong>: <%= comment.comment %></p>
+
+    <% end %>
+     
+    <h3 class="text-light">..</h3>
+    <h4 class="font-italic">Add a comment</h4>
+    <%= form_for([@teacher, @teacher.comments.build]) do |f| %>
+        <p>
+            Userame<br>
+            <%= f.text_field(:user, {:class => 'form-control'})%>
+        </p>
+        <p>
+            Comment<br>
+            <%= f.text_area(:comment, {:class => 'form-control'})%>
+        </p>
+        <p>
+            <%= f.submit("Add", {:class => 'btn bg-secondary text-white'})%>
+        </p>
+    <% end %>
+</div>
